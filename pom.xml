@@ -14,7 +14,7 @@
 	<name>klazify</name>
 	<description>Klazify Service Implementation</description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
