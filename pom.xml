@@ -14,7 +14,9 @@
 	<name>klazify</name>
 	<description>Klazify Service Implementation</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<dependency>
