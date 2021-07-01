@@ -176,9 +176,10 @@ public class KlazifyService {
                 this.external_url = new String(this.url + external_url);
                 RestTemplate restTemplate = new RestTemplate();
                 HttpHeaders headers = new HttpHeaders();
+                headers.add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
                 headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
                 headers.setContentType(MediaType.APPLICATION_JSON);
-                headers.add("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNjI1N2M0OWY4M2Q1MDI3MDM3YjNiNmQ5ZGUwM2EzYmZlZGQ2MjgyNTNiMDc4YWNlNzMxYzkwMjg4MWQ2YmVmZDk5NWU4OTZmOThjNzEwZDEiLCJpYXQiOjE2MjUxNzE2NzUsIm5iZiI6MTYyNTE3MTY3NSwiZXhwIjoxNjU2NzA3Njc1LCJzdWIiOiIyNzk0Iiwic2NvcGVzIjpbXX0.wcJrf-Y9ecN2xyB19z76e6uzZ5NDPsJfNsUpuXdbwqbJ71raf45zny_U70MT36jO-byFPzQKaOY1VurbsJtC9Q");
+                headers.add("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmQ4ZTdjNWYyMDg3OWFjYjAxYTllMGQyYTc3YzZjOWU4NWM2NDkyNDNkNTM4MDAzYTkxMTVjNmMyMjllNGNkY2RiMDE4MDVmODc1NzBjYzUiLCJpYXQiOjE2MjQ5NzE4MTcsIm5iZiI6MTYyNDk3MTgxNywiZXhwIjoxNjU2NTA3ODE3LCJzdWIiOiIyNjU0Iiwic2NvcGVzIjpbXX0.hmcsLiM40hjLyoQgySabqv3Ef5LTE1ZxQEfRFohrp87fj8FDUhXZQ254TvdlD6GhHzH5cZO_4eXCs1jhKE59YA");
                 HttpEntity<String> entity = new HttpEntity<>("body", headers);
                 ResponseEntity<Website> response = restTemplate.exchange(this.external_url, HttpMethod.POST, entity, Website.class);
                 return response;
